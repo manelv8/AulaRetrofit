@@ -8,7 +8,7 @@ https://github.com/square/retrofit/tree/master/retrofit-converters/gson
 
 2 - criar retrofit instance class
 Singleton
-
+```java
 public class RetrofitClientInstace {
 
    private static Retrofit retrofit;
@@ -25,18 +25,19 @@ public class RetrofitClientInstace {
        return retrofit;
    }
 }
-
+```
 3 - criar model Repo e Definir Endpoints
-
+```java
 public interface GitHubService {
 
    @GET("users/{user}/repos")
    Call<List<Repo>> listRepos(@Path("user") String userName);
 }
-
+```
 4 - inserir permissão de acesso à internet
 
 5 - create RepoTask 
+```java
 public class RepoAsyncTask extends AsyncTask<Void,Void,Void> {
 
    GitHubService api;
@@ -74,12 +75,13 @@ public class RepoAsyncTask extends AsyncTask<Void,Void,Void> {
 
    }
 }
-
+```
 
 
 
 6 -criar layout list item
 7- criar adaptper
+```java
 public class MyAdapter extends ArrayAdapter<Repo> {
 
    Activity context;
@@ -119,9 +121,10 @@ public class MyAdapter extends ArrayAdapter<Repo> {
 
    }
 }
-
+```
 
 8- refatorar asynktask
+```java
 public class RepoAsyncTask extends AsyncTask<Void,Void,Void> {
 
    GitHubService api;
@@ -168,8 +171,9 @@ public class RepoAsyncTask extends AsyncTask<Void,Void,Void> {
 
    }
 }
-
+```
 9 - alterar main activity
+```java
 public class MainActivity extends AppCompatActivity {
 
    ListView listView;
@@ -186,5 +190,5 @@ public class MainActivity extends AppCompatActivity {
 
    }
 }
-
+```
 
